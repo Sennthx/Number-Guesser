@@ -8,7 +8,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="card">
+        <div>
+            <h1>Number Guesser</h1>
+            <h4>Please guess a number between 1-10</h4>
+        </div>
+        <form>  
+            <input disabled type="text" id="numberInput" placeholder="Add a number">
+            <button type="submit" id="start" class="btn">Start Game</button>
+        </form>
+        <p id="asd">Number of retries: <span id="retries"></span></p>
+        <span id="messageField"></span>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Secular One";
+}
+h1, h4 {
+    font-weight: 200;
+}
+/* Card style start */
+.card {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    border-radius: 3px;
+    border: 1.5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: -15px;
+    width: 3px;
+    height: 90%;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.card::after{
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: 5%;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+/* Card style end */
+
+/* Button Style */
+
+form {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#messageField {
+    display: none;
+    width: 100%;
+    font-size: 17px;
+}
+
+p {
+    font-size: 15px;
+    margin-top: 15px;
+    display: none;
+    padding: 0;
+}
+
+
+button {
+    width: 30%;
+    font-size: 17px;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:active {
+    position: relative;
+    top: 2px;
+}
+
+/* Input styles */
+
+input {
+    width: 60%;
+    border: 1px  black solid;
+    padding: 5px;
+    padding-left: 10px;
+}
+input {
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    padding-left: 15px;
+}
