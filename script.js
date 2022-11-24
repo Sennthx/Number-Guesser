@@ -51,7 +51,6 @@ function game(){
                         messageOutput("Congratulations you guessed the number!");
                         gameEnd();
                         numberOfRetries--;
-
                     }
                     else{
                         numberOfRetries--;
