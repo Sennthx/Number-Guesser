@@ -5,7 +5,6 @@ document.querySelector("#numberInput").value = "";
 
 let randomNumber;
 let numberOfRetries;
-let givenInput;
 
 function startGame(e){
     e.preventDefault();
@@ -14,14 +13,11 @@ function startGame(e){
         start();
     }
     else if(button.id === "guess"){
-        givenInput = parseInt(document.querySelector("input").value);
         Game();
     } 
     else {
-        reset();
+        start();
     }
-
-    
 }
 
 function start(){
@@ -42,6 +38,7 @@ function start(){
     inputField.disabled = false;
     retriesCounter.textContent = numberOfRetries;
     retriesCounter.parentElement.style.display = "block";
+    document.querySelector("#messageField").style.display = "none";
 }
 
 function Game(){
@@ -50,20 +47,23 @@ function Game(){
         if(!isNaN(parseInt(numberInput.value))){
             if(parseInt(numberInput.value) < 11 && parseInt(numberInput.value) > 0) {
                 if(numberOfRetries > 1){
-                    if(givenInput === randomNumber){
+                    if(parseInt(numberInput.value) === randomNumber){
                         messageOutput("Congratulations you guessed the number!");
                         gameEnd();
+                        numberOfRetries--;
+
                     }
                     else{
                         numberOfRetries--;
-                        messageOutput(`The number isn't ${givenInput}`,0);
-                        document.querySelector("#retries").textContent = numberOfRetries;
+                        messageOutput(`The number isn't ${numberInput.value}`,0);
                     }
                 }
                 else {
                     messageOutput(`Your didn't guess the number! It was ${randomNumber}`,0);
+                    numberOfRetries--;
                     gameEnd();
                 }
+                document.querySelector("#retries").textContent = numberOfRetries;
             }
             else messageOutput("The number given is not between 1 and 10!", 0)
         }
@@ -74,24 +74,15 @@ function Game(){
 
 function gameEnd(){
     // Resetting game
-    document.querySelector("#numberInput").disabled = true;
+    document.querySelector("#retries").textContent = numberOfRetries;
+    const inputField = document.querySelector("#numberInput");
     const button = document.querySelector(".btn");
-    randomNumber = 0;
+    const messageField = document.querySelector("#messageField");
+    inputField.disabled = true;
+    inputField.value = "";
     button.textContent = "Play Again";
     button.id = "end";
-    const messageField = document.querySelector("#messageField");
     messageField.style.padding = "10px 0 0 0";
-    // Initializing game
-    numberInput.value = "";
-    const asd = document.querySelector("#asd");
-    asd.style.display = "none";
-}
-
-function reset(){
-    const button = document.querySelector(".btn");
-    button.textContent = "Start Game";
-    button.id = "start";
-    document.querySelector("#messageField").style.display = "none";
 }
 
 function messageOutput(message, number){
