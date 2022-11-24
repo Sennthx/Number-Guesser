@@ -13,7 +13,7 @@ function startGame(e){
         start();
     }
     else if(button.id === "guess"){
-        Game();
+        game();
     } 
     else {
         start();
@@ -41,7 +41,7 @@ function start(){
     document.querySelector("#messageField").style.display = "none";
 }
 
-function Game(){
+function game(){
     const numberInput = document.querySelector("#numberInput");
     if(numberInput.value !== ""){
         if(!isNaN(parseInt(numberInput.value))){
