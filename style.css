@@ -51,6 +51,7 @@ h1, h4 {
     display: flex;
     flex-direction: column;
     background-color: wheat;
+    width: 350px;
 }
 
 .card::before{
@@ -84,7 +85,8 @@ form {
     margin-top: 15px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 10px;
 }
 #messageField {
     display: none;
@@ -101,7 +103,6 @@ p {
 
 
 button {
-    width: 30%;
     font-size: 17px;
     background-color: white;
     border: 1px black solid;
