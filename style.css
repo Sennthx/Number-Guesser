@@ -45,6 +45,7 @@ h1, h4 {
     position: fixed;
     top: 30px;
     left: 30px;
+    width: 400px;
     border-radius: 3px;
     border: 1.5px solid black;
     padding: 20px;
@@ -84,7 +85,8 @@ form {
     margin-top: 15px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content:left;
+    gap: 10px;
 }
 #messageField {
     display: none;
